@@ -13,10 +13,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView5" android:textColor="#D3D3D3"
             android:textSize="24sp"
-            android:layout_marginTop="92dp" app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            android:layout_marginTop="44dp" app:layout_constraintTop_toBottomOf="@+id/imageView2"
             android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.511"/>
+            app:layout_constraintHorizontal_bias="0.498"/>
     <ImageView
             android:layout_width="235dp"
             android:layout_height="61dp" app:srcCompat="@drawable/logo_isen"
@@ -29,8 +29,8 @@
             android:layout_height="125dp" app:srcCompat="@drawable/web_service"
             android:id="@+id/webButton"
             app:layout_constraintEnd_toEndOf="@+id/textView7"
-            app:layout_constraintStart_toStartOf="@+id/textView7" app:layout_constraintHorizontal_bias="0.909"
-            android:layout_marginTop="32dp" app:layout_constraintTop_toTopOf="@+id/textView7"/>
+            app:layout_constraintStart_toStartOf="@+id/textView7" app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginTop="96dp" app:layout_constraintTop_toTopOf="@+id/textView7"/>
     <TextView
             android:text="Web Services"
             android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
             android:layout_width="147dp"
             android:layout_height="138dp" app:srcCompat="@drawable/cycle_de_vie"
             android:id="@+id/cycleButton"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="28dp"
             app:layout_constraintBottom_toTopOf="@+id/textView6" android:layout_marginBottom="28dp"
             android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView5"/>
     <TextView
@@ -52,7 +52,7 @@
             android:id="@+id/textView6" android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/cycleButton"
             app:layout_constraintStart_toStartOf="@+id/cycleButton" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/cycleButton"/>
+            app:layout_constraintTop_toBottomOf="@+id/cycleButton" app:layout_constraintHorizontal_bias="0.634"/>
     <TextView
             android:text="Sauvegarde"
             android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
     <TextView
             android:text="Permissions"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="54dp"
             android:id="@+id/textView8" android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/permissionButton" app:layout_constraintHorizontal_bias="0.136"
             app:layout_constraintEnd_toEndOf="@+id/permissionButton"
@@ -76,7 +76,7 @@
             app:layout_constraintBottom_toTopOf="@+id/textView8"
             android:layout_marginBottom="16dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="44dp" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toTopOf="@+id/textView6"/>
+            app:layout_constraintTop_toTopOf="@+id/textView6" app:layout_constraintVertical_bias="1.0"/>
     <ImageButton
             android:layout_width="129dp"
             android:layout_height="139dp" app:srcCompat="@drawable/sauvegarde"
@@ -90,5 +90,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/decoButton" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginBottom="32dp" app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

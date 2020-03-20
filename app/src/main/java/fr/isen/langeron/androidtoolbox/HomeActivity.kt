@@ -26,6 +26,14 @@ class HomeActivity : AppCompatActivity() {
             //Toast.makeText(applicationContext,"Identification réussi !",Toast.LENGTH_SHORT).show()
         }
 
+
+        webButton.setOnClickListener {
+            val intent = Intent(this, WebServiceActivity::class.java)
+            startActivity(intent)
+            //Toast.makeText(applicationContext,"Identification réussi !",Toast.LENGTH_SHORT).show()
+        }
+
+
         permissionButton.setOnClickListener {
             val intent = Intent(this, PermissionActivity::class.java)
             startActivity(intent)

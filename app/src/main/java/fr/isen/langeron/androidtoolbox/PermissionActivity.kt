@@ -1,9 +1,12 @@
 package fr.isen.langeron.androidtoolbox
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.ContentResolver
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.ContactsContract
@@ -12,6 +15,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_permission.*
 
@@ -29,15 +33,19 @@ class PermissionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_permission)
 
 
-        contactRecycler.adapter = ContactAdapter(listOf("Tim","Armand"))
+        contactRecycler.adapter = ContactAdapter(listOf("Tim", "Armand"))
         contactRecycler.layoutManager = LinearLayoutManager(this)
 
         getContacts()
 
-        listContact.adapter = ContactAdapter(contacts.sorted())
-        listContact.layoutManager = LinearLayoutManager(this)
+        contactRecycler.adapter = ContactAdapter(contacts.sorted())
+        contactRecycler.layoutManager = LinearLayoutManager(this)
 
-
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_CONTACTS), 123)
+        }else{
+            getContacts()
+        }
         imageButton.setOnClickListener { showPictureDialog() }
 
     }
@@ -71,6 +79,9 @@ class PermissionActivity : AppCompatActivity() {
         startActivityForResult(intent, CAMERA)
     }
 
+
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK && requestCode == GALLERY) {
             imageButton.setImageURI(data?.data)
@@ -103,4 +114,5 @@ class PermissionActivity : AppCompatActivity() {
     }
 
 }
+
 

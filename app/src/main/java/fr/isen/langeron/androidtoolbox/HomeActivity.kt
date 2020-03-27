@@ -57,5 +57,12 @@ class HomeActivity : AppCompatActivity() {
             editor.clear()
             editor.apply()
         }
+
+        bleButton.setOnClickListener {
+            val intent = Intent(this, BLEActivity::class.java)
+            startActivity(intent)
+            //Toast.makeText(applicationContext,"Identification réussi !",Toast.LENGTH_SHORT).show()
+        }
+
     }
 }

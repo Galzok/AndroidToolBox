@@ -1,15 +1,12 @@
 package fr.isen.langeron.androidtoolbox
 
-import android.bluetooth.BluetoothDevice
-import android.bluetooth.BluetoothGatt
-import android.bluetooth.BluetoothGattCallback
-import android.bluetooth.BluetoothProfile
+import android.bluetooth.*
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_bledevice.*
-import kotlinx.android.synthetic.main.activity_bledevice_adapter.*
+
 
 
 class BLEDeviceActivity : AppCompatActivity() {
@@ -38,14 +35,14 @@ class BLEDeviceActivity : AppCompatActivity() {
                 when (newState) {
                     BluetoothProfile.STATE_CONNECTED -> {
                         runOnUiThread {
-                            textUUID.text = "Connecté"
+                            connectionState.text = "Connecté"
                         }
                         bluetoothGatt?.discoverServices()
                         Log.i(TAG, "Connected to GATT")
                     }
                     BluetoothProfile.STATE_DISCONNECTED -> {
                         runOnUiThread {
-                            textUUID.text = "Déconnecté"
+                            connectionState.text = "Déconnecté"
                         }
                         Log.i(TAG, "Disconnected from GATT")
                     }
@@ -55,14 +52,46 @@ class BLEDeviceActivity : AppCompatActivity() {
             override fun onServicesDiscovered(gatt: BluetoothGatt?, status: Int) {
                 super.onServicesDiscovered(gatt, status)
                 runOnUiThread {
-                    bleServiceList.adapter = BLEServiceAdapter(
+                    itemView.adapter = BLEServiceAdapter(
                     gatt?.services?.map {BLEService(it.uuid.toString(),it.characteristics)}
                         ?.toMutableList() ?: arrayListOf()
-                    )
-                    bleServiceList.LayoutManager = LinearLayoutManager(this@BLEDeviceActivity)
+                        , this@BLEDeviceActivity, gatt)
+                    itemView.layoutManager = LinearLayoutManager(this@BLEDeviceActivity)
                 }
 
                 }
-            }
+    override fun onCharacteristicRead(
+        gatt: BluetoothGatt?,
+        characteristic: BluetoothGattCharacteristic,
+        status: Int
+    ) {
+        val value = characteristic.getStringValue(0)
+        Log.e(
+            "TAG",
+            "onCharacteristicRead: " + value + " UUID " + characteristic.uuid.toString()
+        )
+    }
+
+    override fun onCharacteristicChanged(
+        gatt: BluetoothGatt?,
+        characteristic: BluetoothGattCharacteristic
+    ) {
+        val value = characteristic.value
+        Log.e(
+            "TAG",
+            "onCharacteristicRead: " + value + " UUID " + characteristic.uuid.toString()
+        )
+    }
+}
+
+override fun onStop() {
+    super.onStop()
+    bluetoothGatt?.close()
+}
+
+companion object {
+    private const val STATE_DISCONNECTED = "Status : Déconnecté"
+    private const val STATE_CONNECTED = "Status : Connecté"
+                }
         }
 

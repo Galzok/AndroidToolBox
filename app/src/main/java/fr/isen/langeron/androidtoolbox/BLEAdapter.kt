@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_bleadapter.view.*
+import kotlinx.android.synthetic.main.activity_bledevice_service_cell.view.*
+
 
 
 class BluetoothActivityAdapter(private val scanResults: ArrayList<ScanResult>, private val deviceClickListener: (BluetoothDevice) -> Unit) :
@@ -22,7 +23,7 @@ class BluetoothActivityAdapter(private val scanResults: ArrayList<ScanResult>, p
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DevicesViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_bleadapter, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_bledevice_service_cell, parent, false)
 
 
         return DevicesViewHolder(view)

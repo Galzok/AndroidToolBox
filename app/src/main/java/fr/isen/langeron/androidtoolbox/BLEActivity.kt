@@ -28,12 +28,6 @@ class BLEActivity : AppCompatActivity() {
     private lateinit var adapter: BluetoothActivityAdapter
     private val devices = ArrayList<ScanResult>()
 
-    private var mCountDownTimer: CountDownTimer? = null
-
-    private var mTimerRunning = false
-
-    private var mTimeLeftInMillis = SCAN_PERIOD
-
     private val bluetoothAdapter: BluetoothAdapter? by lazy(LazyThreadSafetyMode.NONE) {
         val bluetoothManager = getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
         bluetoothManager.adapter
@@ -52,9 +46,18 @@ class BLEActivity : AppCompatActivity() {
             when {
                 isBLEEnabled -> {
                     //init scan
+                    if (textView5.text == "Lancer le scan BLE") {
+                       imageScan.setImageResource(android.R.drawable.ic_media_pause)
+                        textView5.text = "Scan en cours ..."
                     initBLEScan()
                     initScan()
-                }
+                } else if (textView5.text == "Scan en cours ...") {
+                imageScan.setImageResource(android.R.drawable.ic_media_play)
+                textView5.text = "Lancer le scan BLE"
+                progressBar.visibility = View.INVISIBLE
+                bleDivider.visibility = View.VISIBLE
+            }
+            }
                 bluetoothAdapter != null -> {
                     //ask for permission
                     val enableBTIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)

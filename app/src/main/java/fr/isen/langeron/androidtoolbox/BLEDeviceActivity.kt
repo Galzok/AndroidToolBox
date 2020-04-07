@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_bledevice.*
+import kotlinx.android.synthetic.main.activity_bledevice_characteristic_cell.*
 
 
 class BLEDeviceActivity : AppCompatActivity() {
@@ -64,7 +65,9 @@ class BLEDeviceActivity : AppCompatActivity() {
             super.onServicesDiscovered(gatt, status)
             runOnUiThread {
                 itemView.adapter = BLEServiceAdapter(
-                    gatt?.services?.map { BLEService(it.uuid.toString(), it.characteristics) }
+                    gatt?.services?.map { BLEService(
+                        it.uuid.toString(),
+                        it.characteristics) }
                         ?.toMutableList() ?: arrayListOf()
                     , this@BLEDeviceActivity, gatt)
                 itemView.layoutManager = LinearLayoutManager(this@BLEDeviceActivity)

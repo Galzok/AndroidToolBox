@@ -9,7 +9,6 @@ import android.bluetooth.le.ScanResult
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-import android.os.CountDownTimer
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -18,7 +17,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_ble.*
-import java.util.*
 import kotlin.collections.ArrayList
 
 
@@ -46,14 +44,14 @@ class BLEActivity : AppCompatActivity() {
             when {
                 isBLEEnabled -> {
                     //init scan
-                    if (textView5.text == "Lancer le scan BLE") {
+                    if (textView9.text == "Lancer le Scan BLE") {
                        imageScan.setImageResource(android.R.drawable.ic_media_pause)
-                        textView5.text = "Scan en cours ..."
+                        textView9.text = "Scan en cours ..."
                     initBLEScan()
                     initScan()
-                } else if (textView5.text == "Scan en cours ...") {
+                } else if (textView9.text == "Scan en cours ...") {
                 imageScan.setImageResource(android.R.drawable.ic_media_play)
-                textView5.text = "Lancer le scan BLE"
+                textView9.text = "Lancer le Scan BLE"
                 progressBar.visibility = View.INVISIBLE
                 bleDivider.visibility = View.VISIBLE
             }

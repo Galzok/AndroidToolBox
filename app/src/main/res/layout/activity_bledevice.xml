@@ -10,13 +10,12 @@
             android:id="@+id/dividerBle2"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="24dp"
             android:background="#FF0000"
             android:backgroundTint="#FF0000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/connectionState" />
+            app:layout_constraintTop_toBottomOf="@+id/connectionState" android:layout_marginTop="68dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/itemView"
@@ -24,7 +23,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dividerBle2">
+            app:layout_constraintTop_toBottomOf="@+id/dividerBle2" android:layout_marginTop="28dp"
+            app:layout_constraintHorizontal_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -33,20 +33,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="36dp"
             android:text="TextView"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
             android:id="@+id/connectionState"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:text="TextView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+            app:layout_constraintTop_toBottomOf="@+id/name"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -101,7 +101,7 @@ class BLEServiceAdapter(
         viewType: Int
     ): CharacteristicViewHolder = CharacteristicViewHolder(
         LayoutInflater.from(parent.context).inflate(
-            R.layout.activity_bledevice_details_cell,
+            R.layout.activity_bledevice_characteristic_cell,
             parent,
             false
         )

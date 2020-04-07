@@ -13,7 +13,7 @@
             android:layout_marginTop="8dp"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/charactNom" />
+            app:layout_constraintTop_toBottomOf="@+id/charactNom"/>
 
     <TextView
             android:id="@+id/properties"
@@ -23,7 +23,7 @@
             android:layout_marginTop="8dp"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/charactUUID" />
+            app:layout_constraintTop_toBottomOf="@+id/charactUUID"/>
 
     <TextView
             android:id="@+id/charactNom"
@@ -34,7 +34,7 @@
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
             android:id="@+id/charactValue"
@@ -44,7 +44,7 @@
             android:layout_marginTop="8dp"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/properties" />
+            app:layout_constraintTop_toBottomOf="@+id/properties"/>
 
     <TextView
             android:id="@+id/readButtonON"
@@ -56,7 +56,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/writeButtonON"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
             android:id="@+id/readButtonOFF"
@@ -68,7 +68,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/writeButtonON"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
             android:id="@+id/writeButtonON"
@@ -104,7 +104,7 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/writeButtonON" />
+            app:layout_constraintStart_toEndOf="@+id/writeButtonON"/>
 
     <TextView
             android:id="@+id/notifyButtonOFF"
@@ -117,7 +117,7 @@
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/writeButtonON" />
+            app:layout_constraintStart_toEndOf="@+id/writeButtonON"/>
 
     <View
             android:id="@+id/divider"
@@ -128,7 +128,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginBottom="4dp"/>
+    />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

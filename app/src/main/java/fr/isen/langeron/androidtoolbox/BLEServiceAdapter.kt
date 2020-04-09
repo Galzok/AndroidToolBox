@@ -166,6 +166,14 @@ class BLEServiceAdapter(
             dialog.show()
         }
 
+        if (characteristic.uuid == UUID.fromString("466c5678-f593-11e8-8eb2-f2801f1b9fd1") && notifier){
+            holder.valueBle.text =  "Valeur : ${byteArrayToHexString(characteristic.value)}"
+        } else if (characteristic.value != null) {
+            holder.valueBle.text =  "Valeur : ${String (characteristic.value)}"
+        } else {
+            holder.valueBle.text =  "Valeur : "
+        }
+
 
         holder.buttonNotify.setOnClickListener {
             if (!notifier){

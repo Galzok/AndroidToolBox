@@ -13,14 +13,16 @@
             android:id="@+id/imageButton"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/Title"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:background="@color/design_default_color_secondary"/>
     <TextView
             android:text="Acces aux informations Android"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/Title" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp" app:layout_constraintTop_toTopOf="parent" android:textSize="24sp"/>
+            android:layout_marginTop="24dp" app:layout_constraintTop_toTopOf="parent" android:textSize="24sp"
+            android:textColor="@color/design_default_color_secondary_variant"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="310dp"
             android:layout_height="284dp"
@@ -30,10 +32,11 @@
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
             android:text="Contacts de Timothé"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="243dp"
+            android:layout_height="61dp"
             android:id="@+id/contactText" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintTop_toBottomOf="@+id/imageButton" android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp" app:layout_constraintBottom_toTopOf="@+id/contactRecycler"/>
+            android:layout_marginBottom="24dp" app:layout_constraintBottom_toTopOf="@+id/contactRecycler"
+            android:textSize="24sp" android:textColor="@color/design_default_color_secondary_variant"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/Formulaire"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="32dp" android:textSize="24sp"
-            android:layout_marginStart="120dp" app:layout_constraintStart_toStartOf="parent"/>
+            android:layout_marginStart="120dp" app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/design_default_color_secondary_variant"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,13 +29,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/prenom"
             app:layout_constraintBottom_toTopOf="@+id/first_name" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="72dp" android:layout_marginBottom="8dp"/>
+            android:layout_marginStart="72dp" android:layout_marginBottom="8dp"
+            android:textColor="@color/design_default_color_secondary_variant"/>
     <TextView
             android:text="Nom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/nom" app:layout_constraintBottom_toTopOf="@+id/name"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="72dp"/>
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="72dp"
+            android:textColor="@color/design_default_color_secondary_variant"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,14 +53,15 @@
             android:id="@+id/dateTitle"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="100dp" app:layout_constraintTop_toBottomOf="@+id/name"
-            android:layout_marginTop="32dp"/>
+            android:layout_marginTop="32dp" android:textColor="@color/design_default_color_secondary_variant"/>
     <Button
             android:text="Sauvegarde"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/save_button" android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toTopOf="@+id/read_button" app:layout_constraintEnd_toEndOf="@+id/read_button"
-            app:layout_constraintStart_toStartOf="@+id/read_button"/>
+            app:layout_constraintStart_toStartOf="@+id/read_button"
+            android:background="@color/design_default_color_secondary"/>
     <Button
             android:text="lecture"
             android:layout_width="wrap_content"
@@ -65,5 +69,5 @@
             android:id="@+id/read_button" android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="8dp" android:background="@color/design_default_color_secondary"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

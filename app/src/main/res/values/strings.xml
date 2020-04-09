@@ -9,8 +9,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="_lecture"/>
-    <string name="ecrire"/>
-    <string name="notifier"/>
+    <string name="_lecture">"Lecture"</string>
+    <string name="ecrire">"Ecriture"</string>
+    <string name="notifier">"notifications"</string>
     <string name="entrez_une_valeur"/>
 </resources>

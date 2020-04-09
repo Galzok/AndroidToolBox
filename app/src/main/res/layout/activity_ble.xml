@@ -30,11 +30,13 @@
             android:layout_width="390dp"
             android:layout_height="6dp"
             android:id="@+id/progressBar"
+            android:indeterminate="true"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            android:background="#673AB7"
+            android:background="@color/design_default_color_on_primary"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="7dp" app:layout_constraintBottom_toTopOf="@+id/bleDivider"
-            android:layout_marginTop="75dp" app:layout_constraintTop_toBottomOf="@+id/imageScan"/>
+            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/imageScan"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0"/>
     <TextView
             android:text="le device n'est pas compatible"
             android:layout_width="wrap_content"

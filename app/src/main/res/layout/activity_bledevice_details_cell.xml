@@ -12,19 +12,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textNom" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="84dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="60dp"/>
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="60dp"
+            android:textColor="@color/design_default_color_secondary_variant"/>
     <TextView
             android:text="TextView"
-            android:layout_width="70dp"
-            android:layout_height="22dp"
+            android:layout_width="213dp"
+            android:layout_height="18dp"
             android:id="@+id/textUUID"
             app:layout_constraintTop_toBottomOf="@+id/textNom" app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="32dp" app:layout_constraintStart_toStartOf="@+id/textNom"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp" android:textColor="@color/design_default_color_secondary_variant"/>
     <ImageView
             android:layout_width="31dp"
             android:layout_height="35dp" app:srcCompat="@android:drawable/arrow_down_float"
             android:id="@+id/imageFleche"
-            app:layout_constraintStart_toEndOf="@+id/textUUID" android:layout_marginStart="48dp"
-            android:layout_marginBottom="36dp" app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toEndOf="@+id/textUUID" android:layout_marginStart="32dp"
+            android:layout_marginBottom="40dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:scrollbarThumbHorizontal="@color/design_default_color_secondary_variant"
+            android:scrollbarThumbVertical="@color/design_default_color_secondary_variant"
+            android:background="@color/design_default_color_on_primary"
+            android:tint="@color/design_default_color_secondary_variant"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

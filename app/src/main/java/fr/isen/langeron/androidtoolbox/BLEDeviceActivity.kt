@@ -22,6 +22,7 @@ class BLEDeviceActivity : AppCompatActivity() {
         setContentView(R.layout.activity_bledevice)
 
         val device: BluetoothDevice = intent.getParcelableExtra("ble_device")
+        deviceName.text = device.name
         bluetoothGatt = device.connectGatt(this, true, gattCallback)
 
     }

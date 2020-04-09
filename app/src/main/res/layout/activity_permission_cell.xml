@@ -7,9 +7,10 @@
 
     <TextView
             android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="98dp"
+            android:layout_height="46dp"
             android:id="@+id/contactName" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginTop="32dp" app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_marginTop="32dp" app:layout_constraintTop_toTopOf="parent" android:textSize="18sp"
+            android:textColor="@color/design_default_color_secondary_variant"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

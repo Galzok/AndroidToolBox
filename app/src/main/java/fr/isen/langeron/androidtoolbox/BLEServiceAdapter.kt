@@ -33,7 +33,7 @@ class BLEServiceAdapter(
     ) {
 
     val ble: BluetoothGatt? = gatt
-    var notifier = false
+    var notif = false
 
     class ServiceViewHolder(itemView: View) : GroupViewHolder(itemView) {
         val fleche: ImageView = itemView.imageFleche
@@ -141,13 +141,9 @@ class BLEServiceAdapter(
         ble?.readCharacteristic(characteristic)
         holder.valueBle.text = "Valeur : "
 
+
         holder.buttonRead.setOnClickListener {
             ble?.readCharacteristic(characteristic)
-            if (characteristic.value != null) {
-                holder.valueBle.text = "Valeur : ${String(characteristic.value)}"
-            } else {
-                holder.valueBle.text = "Valeur : null"
-            }
         }
 
 
@@ -166,7 +162,8 @@ class BLEServiceAdapter(
             dialog.show()
         }
 
-        if (characteristic.uuid == UUID.fromString("466c5678-f593-11e8-8eb2-f2801f1b9fd1") && notifier){
+
+        if (characteristic.uuid == UUID.fromString("466c9abc-f593-11e8-8eb2-f2801f1b9fd1") && notif){
             holder.valueBle.text =  "Valeur : ${byteArrayToHexString(characteristic.value)}"
         } else if (characteristic.value != null) {
             holder.valueBle.text =  "Valeur : ${String (characteristic.value)}"
@@ -176,19 +173,14 @@ class BLEServiceAdapter(
 
 
         holder.buttonNotify.setOnClickListener {
-            if (!notifier){
-                notifier = true
+            if (!notif){
+                notif = true
                 holder.buttonNotify.setBackgroundColor(0x40FF0000)
                 if (ble != null) {
                     setCharacteristicNotificationInternal(ble, characteristic, true)
-                    if(characteristic.value != null){
-                        holder.valueBle.text =  "Valeur : ${byteArrayToHexString(characteristic.value)}"
-                    } else {
-                        holder.valueBle.text =  "Valeur : null"
-                    }
                 }
             } else {
-                notifier = false
+                notif = false
                 holder.buttonNotify.setBackgroundColor(0x00FFFFFF)
                 if (ble != null) {
                     setCharacteristicNotificationInternal(ble, characteristic, false)
@@ -216,10 +208,10 @@ class BLEServiceAdapter(
     private fun byteArrayToHexString(array: ByteArray): String {
         val result = StringBuilder(array.size * 2)
         for ( byte in array ) {
-            val toAppend = String.format("%X", byte) // hexadecimal
+            val toAppend = String.format("%X", byte)
             result.append(toAppend).append("-")
         }
-        result.setLength(result.length - 1) // remove last '-'
+        result.setLength(result.length - 1)
         return result.toString()
     }
 
@@ -266,7 +258,10 @@ class BLEServiceAdapter(
         var nom: String
 
         when (uuid.toString().substring(4, 8)) {
-            "2a79" -> nom = "Refroidissement éolien"
+            "2ac4" -> nom = "Propriétés de l'objet"
+            "2a4e" -> nom = "Mode Protocole"
+            "2a3b" -> nom = "Service requis"
+
             else -> nom = "Caractéristique spécifique"
         }
         return nom

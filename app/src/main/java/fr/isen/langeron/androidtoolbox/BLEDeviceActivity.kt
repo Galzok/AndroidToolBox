@@ -60,6 +60,8 @@ class BLEDeviceActivity : AppCompatActivity() {
                 "TAG",
                 "onCharacteristicWrite: " + value + " UUID " + characteristic.uuid.toString()
             )
+            runOnUiThread {
+                itemView.adapter?.notifyDataSetChanged()}
         }
 
         override fun onServicesDiscovered(gatt: BluetoothGatt?, status: Int) {
@@ -86,6 +88,8 @@ class BLEDeviceActivity : AppCompatActivity() {
                 "TAG",
                 "onCharacteristicRead: " + value + " UUID " + characteristic.uuid.toString()
             )
+            runOnUiThread {
+                itemView.adapter?.notifyDataSetChanged()}
         }
 
         override fun onCharacteristicChanged(
@@ -97,7 +101,8 @@ class BLEDeviceActivity : AppCompatActivity() {
                 "TAG",
                 "onCharacteristicChanged: " + value + " UUID " + characteristic.uuid.toString()
             )
-            adapter.notifyDataSetChanged()
+            runOnUiThread {
+                itemView.adapter?.notifyDataSetChanged()}
         }
     }
 

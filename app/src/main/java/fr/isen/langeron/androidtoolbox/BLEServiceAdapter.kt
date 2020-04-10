@@ -138,7 +138,6 @@ class BLEServiceAdapter(
         holder.charactUUID.text = uuid.toString()
         holder.charactNom.text = nom
         holder.properties.text = "Proprietés : ${proprietie(characteristic.properties)}"
-        ble?.readCharacteristic(characteristic)
         holder.valueBle.text = "Valeur : "
 
 
@@ -175,13 +174,11 @@ class BLEServiceAdapter(
         holder.buttonNotify.setOnClickListener {
             if (!notif){
                 notif = true
-                holder.buttonNotify.setBackgroundColor(0x40FF0000)
                 if (ble != null) {
                     setCharacteristicNotificationInternal(ble, characteristic, true)
                 }
             } else {
                 notif = false
-                holder.buttonNotify.setBackgroundColor(0x00FFFFFF)
                 if (ble != null) {
                     setCharacteristicNotificationInternal(ble, characteristic, false)
                 }
